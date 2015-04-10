@@ -9,4 +9,14 @@ brewsr.config(['$routeProvider', '$locationProvider',function($routeProvider, $l
       templateUrl:'/views/home.html',
       controller:'HomeCtrl'
   })
+
+
+}]);
+
+brewsr.run(['UserService',function(UserService){
+
+    UserService.check(function(err,data){
+        console.log('check',err,data);
+    });
+
 }]);
